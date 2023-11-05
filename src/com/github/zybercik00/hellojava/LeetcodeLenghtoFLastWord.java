@@ -33,7 +33,6 @@ public class LeetcodeLenghtoFLastWord {
         leetcode.lengthOfLastWord("   fly me   to   the moon  ");
     }
 
-    // s = "   fly me   to   the moon  ";
 
     public int lengthOfLastWord(String s) {
 
@@ -46,11 +45,11 @@ public class LeetcodeLenghtoFLastWord {
         char[] charArrayOfElement = splited[elementIndex].toCharArray();
         for (int charIndex = 0; charIndex < charArrayOfElement.length; charIndex++) {
             if (charArrayOfElement[charIndex] != ' ') {
-                // System.out.println(splited[elementIndex]);
+               
                 count++;
                 for (int j = 0; j < newStringArray.length; j++) {
                     newStringArray[j] = splited[elementIndex];
-                    // System.out.println(newStringArray[j]);
+                   
                 }
                 break;
             }
