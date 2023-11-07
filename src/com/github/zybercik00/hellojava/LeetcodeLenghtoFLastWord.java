@@ -29,8 +29,13 @@ public class LeetcodeLenghtoFLastWord {
     
 
     public static void main(String[] args) {
+        long begin = System.nanoTime();
         LeetcodeLenghtoFLastWord leetcode = new LeetcodeLenghtoFLastWord();
         leetcode.lengthOfLastWord("   fly me   to   the moon  ");
+        long end = System.nanoTime();
+        long time = end - begin;
+        System.out.println();
+        System.out.println("Elapsed time: " + time + " milli second");
     }
 
 
