@@ -4,8 +4,12 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Desktop;  
+import java.io.File;
+import java.nio.file.Files;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -44,6 +48,8 @@ public class MyFrame extends JFrame implements ActionListener {
     exitFile = new JMenuItem("Exit");
 
     openFile.addActionListener(this);
+    saveFile.addActionListener(this);
+    exitFile.addActionListener(this);
 
     fileMenu.add(openFile);
     fileMenu.add(saveFile);
@@ -57,9 +63,23 @@ public class MyFrame extends JFrame implements ActionListener {
     this.getContentPane().setBackground(new Color(0,0,0));
     }
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==openFile) {
-            System.out.println("open");
+    public void actionPerformed(ActionEvent event) {
+        if (event.getSource()==openFile) {
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            try {
+            File file = new File(chooser.getSelectedFile().getAbsolutePath());
+            Desktop desctop = Desktop.getDesktop();
+            desctop.open(file);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if (event.getSource()==saveFile) {
+            System.out.println("open"); 
+        }
+        if (event.getSource()==exitFile) {
+            System.exit(0);;
         }
 
     }
