@@ -16,6 +16,7 @@ import javax.swing.BoxLayout;
 
 
 public class BorderDemo extends JPanel {
+    
     public BorderDemo() {
         super(new GridLayout(1,0));
 
@@ -55,7 +56,7 @@ public class BorderDemo extends JPanel {
         matteBorders.setLayout(new BoxLayout(matteBorders,
                                               BoxLayout.Y_AXIS));
 
-        ImageIcon icon = createImageIcon("/Users/kamilchmiel/Projects/HelloJava/src/com/github/zybercik00/hellojavagui/wavy.gif",
+        ImageIcon icon = createImageIcon("/src/com/github/zybercik00/hellojavagui/images/wavy.gif",
                                          "wavy-line border icon"); 
         Border border = BorderFactory.createMatteBorder(5, 1, 1, 10, icon);
         if (icon != null) {
