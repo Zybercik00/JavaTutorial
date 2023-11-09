@@ -1,4 +1,4 @@
-package com.github.zybercik00.hellojavagui;
+package com.github.zybercik00.hellojava;
 
 import javax.swing.*;
 
